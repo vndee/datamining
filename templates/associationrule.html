@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h3>ASSOCIATION RULE MINING</h3>
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <input type="file" name="document">
+    <button type="submit">Upload file</button>
+  </form>
+    <div class="result_area">
+    {% if item_set %}
+            <b>MAX-ITEM SET</b>
+            <br>
+            {% for p in item_set %}
+                <div class="result_item">
+                    {{ p }}
+                </div>
+                <br>
+            {% endfor %}
+    {% endif %}
+
+    {% if assoc %}
+            <b>ASSOCIATION RULES</b>
+            <br>
+            {% for t in assoc %}
+                <div class="result_item">
+                    {{ t }}
+                </div>
+                <br>
+            {% endfor %}
+    {% endif %}
+    </div>
+
+    {% if error %}
+        <br>
+        <div class="alert">
+            <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+                {{ error }}
+        </div>
+    {% endif %}
+{% endblock %}

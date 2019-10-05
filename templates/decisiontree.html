@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h3>DECISION TREE</h3>
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <input type="file" name="document">
+      <br>
+        <label for="age">Age: </label>
+      <input id="age" type="text" name="age" value="67">
+
+        <label for="sex">Sex: </label>
+        <input id="sex" type="text" name="sex" value="1">
+
+        <label for="cp">CP: </label>
+        <input id="cp" type="text" name="cp" value="4">
+        <br>
+
+        <label for="trestbps">Trestbps: </label>
+        <input id="trestbps" type="text" name="trestbps" value="160">
+
+
+        <label for="chol">Chol: </label>
+        <input id="chol" type="text" name="chol" value="286">
+
+
+        <label for="fbs">FBS: </label>
+        <input id="fbs" type="text" name="fbs" value="0">
+        <br>
+
+        <label for="restecg">restecg: </label>
+        <input id="restecg" type="text" name="restecg" value="2">
+
+
+        <label for="thalach">thalach: </label>
+        <input id="thalach" type="text" name="thalach" value="108">
+
+
+        <label for="exang">exang: </label>
+        <input id="exang" type="text" name="exang" value="1">
+        <br>
+
+        <label for="oldpeak">oldpeak: </label>
+        <input id="oldpeak" type="text" name="oldpeak" value="1.5">
+
+
+        <label for="slope">slope: </label>
+        <input id="slope" type="text" name="slope" value="2">
+
+
+        <label for="ca">ca: </label>
+        <input id="ca" type="text" name="ca" value="3">
+        <br>
+
+        <label for="thal">thal: </label>
+        <input id="thal" type="text" name="thal" value="3">
+
+        <br>
+
+    <button type="submit">Upload file</button>
+  </form>
+
+    {% if tr_acc and te_acc %}
+        <br>
+        <h4>RESULT</h4>
+        <div class="result_area">
+            <p>Train accuracy: {{ tr_acc }}
+                <br>Test accuracy: {{ te_acc }}
+                <br>Predict: {{ pred }}</p>
+        </div>
+    {% endif %}
+
+    {% if error %}
+        <br>
+        <div class="alert">
+            <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+                {{ error }}
+        </div>
+    {% endif %}
+{% endblock %}

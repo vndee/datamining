@@ -8,6 +8,9 @@
   <title>{% block title %}{% endblock %}</title>
     <style>
         /* The alert message box */
+        body{
+            background-color: white;
+        }
 .alert {
   padding: 20px;
   background-color: #f44336; /* Red */
@@ -103,7 +106,7 @@
 </style>
 </head>
 <body>
-  <nav class="navbar navbar-expand-lg navbar-light mb-4" style="background-color:#decdc3">
+  <nav class="navbar navbar-expand-lg navbar-light mb-4" style="background-color:#000000">
     <div class="container">
       <a class="navbar-brand" href="{% url 'home' %}">HOME</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -112,10 +115,10 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'associationrule' %}">Associtaion Rule</a>
+              <a class="nav-link" href="{% url 'associationrule' %}"><font color="white"><strong>Associtaion Rule</strong></font></a>
           </li>
             <li class="nav-item">
-            <a class="nav-link" href="{% url 'decisiontree' %}">Decision Tree</a>
+                <a class="nav-link" href="{% url 'decisiontree' %}"><font color="white"><strong>Decision Tree</strong></font></a>
           </li>
         </ul>
       </div>

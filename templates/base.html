@@ -85,12 +85,27 @@
   opacity: 0;
 }
 
+.grid-container {
+  display: inline-grid;
+  grid-template-columns: auto auto auto;
+  background-color: #FFFFFF;
+  padding: 10px;
+}
+        .grid-item {
+  background-color: rgba(255, 255, 255, 0.8);
+  {#border: 1px solid rgba(0, 0, 0, 0.8);#}
+  padding: 20px;
+  {#font-size: 30px;#}
+  text-align: center;
+}
+
+
 </style>
 </head>
 <body>
   <nav class="navbar navbar-expand-lg navbar-light mb-4" style="background-color:#decdc3">
     <div class="container">
-      <a class="navbar-brand" href="{% url 'home' %}">Data Mining Demo</a>
+      <a class="navbar-brand" href="{% url 'home' %}">HOME</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>

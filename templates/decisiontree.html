@@ -1,61 +1,85 @@
 {% extends 'base.html' %}
 
 {% block content %}
-  <h3>DECISION TREE</h3>
+  <h4 class="card-title"><font color="red"><strong>DECISION TREE</strong></font></h4>
   <form method="post" enctype="multipart/form-data">
     {% csrf_token %}
     <input type="file" name="document">
       <br>
+      <div class="grid-container">
+          <div class="grid-item">
         <label for="age">Age: </label>
       <input id="age" type="text" name="age" value="67">
+            </div>
 
+          <div class="grid-item">
         <label for="sex">Sex: </label>
         <input id="sex" type="text" name="sex" value="1">
+          </div>
 
-        <label for="cp">CP: </label>
+          <div class="grid-item">
+        <label for="cp">Chest pain type: </label>
         <input id="cp" type="text" name="cp" value="4">
-        <br>
+{#        <br>#}
+          </div>
 
+          <div class="grid-item">
         <label for="trestbps">Trestbps: </label>
         <input id="trestbps" type="text" name="trestbps" value="160">
+          </div>
 
-
+          <div class="grid-item">
         <label for="chol">Chol: </label>
         <input id="chol" type="text" name="chol" value="286">
+          </div>
 
-
+          <div class="grid-item">
         <label for="fbs">FBS: </label>
         <input id="fbs" type="text" name="fbs" value="0">
-        <br>
+{#        <br>#}
+          </div>
 
+          <div class="grid-item">
         <label for="restecg">restecg: </label>
         <input id="restecg" type="text" name="restecg" value="2">
+          </div>
 
-
+          <div class="grid-item">
         <label for="thalach">thalach: </label>
         <input id="thalach" type="text" name="thalach" value="108">
+          </div>
 
-
+          <div class="grid-item">
         <label for="exang">exang: </label>
         <input id="exang" type="text" name="exang" value="1">
-        <br>
+{#        <br>#}
+          </div>
 
+          <div class="grid-item">
         <label for="oldpeak">oldpeak: </label>
         <input id="oldpeak" type="text" name="oldpeak" value="1.5">
+          </div>
 
-
+          <div class="grid-item">
         <label for="slope">slope: </label>
         <input id="slope" type="text" name="slope" value="2">
+          </div>
 
-
-        <label for="ca">ca: </label>
+          <div class="grid-item">
+        <label for="ca">number of major vessels: </label>
         <input id="ca" type="text" name="ca" value="3">
-        <br>
+{#        <br>#}
+          </div>
 
+{#        <br>#}
+          </div>
+      <div class="grid-container">
+          <div class="grid-item">
         <label for="thal">thal: </label>
         <input id="thal" type="text" name="thal" value="3">
-
-        <br>
+          </div>
+      </div>
+      <br>
 
     <button type="submit">Upload file</button>
   </form>

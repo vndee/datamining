@@ -92,7 +92,6 @@ class AssociationRule:
         self.ls_max_itemset = ls_itemset
 
         while ls_itemset.__len__() > 0:
-            # print(ls_itemset)
             ls_itemset = self.generation(ls_itemset)
             self.ls_max_itemset = self.clear_old_set(ls_itemset)
 

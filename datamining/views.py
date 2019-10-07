@@ -1,8 +1,6 @@
-from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from django.views.generic import TemplateView
 from django.core.files.storage import FileSystemStorage
-from datamining.forms import InputForm
 from datamining.tree import DTree
 from datamining.rule import AssociationRule
 
@@ -35,7 +33,6 @@ class Home(TemplateView):
 def association_rule(request):
     context = {}
     if request.method == 'POST':
-        # data = parse_request(request.POST)
         uploaded_file = request.FILES['document']
         fs = FileSystemStorage()
         file_name = fs.save(uploaded_file.name, uploaded_file)
